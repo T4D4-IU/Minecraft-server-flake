@@ -32,6 +32,7 @@ M4 Mac (Darwin) 上で NeoForge 1.21.1 サーバーを動作させ、指定さ�
 - GitHub Actions (`.github/workflows/nix.yml`) を追加し、プッシュ時に自動で `nix flake check` が走るように構成。
 - GitHub Actions のトリガーに `paths` フィルターを追加。`docs/` などのドキュメントのみの変更時は CI をスキップするように最適化。
 - `deadnix` および `statix` による指摘内容を修正し、全ての自動チェックをパスするように調整。
+- `README.md` を追加。ご友人や他のプレイヤーが GitHub Actions から最新の Mod パックを入手するためのガイドを整備。
 - `packages.mods-zip` を追加し、サーバーで使用している Mod を一括で ZIP 圧縮してクライアント向けに配布可能に。
 - `packages.mods-zip` を追加し、サーバーで使用している Mod を一括で ZIP 圧縮してクライアント向けに配布可能に。
 - GitHub Actions で `mods.zip` をビルドし、成果物（Artifact）としてアップロードするステップを追加。
