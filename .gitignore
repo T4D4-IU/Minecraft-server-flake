@@ -1,0 +1,15 @@
+# Minecraft Server Data
+/data/
+/result
+
+# Mac
+.DS_Store
+
+# Nix
+flake.lock # Optional: usually tracked, but some prefer not to for local experiments. nix-minecraft suggests tracking it.
+.direnv/
+.envrc
+
+# IDEs
+.idea/
+.vscode/
