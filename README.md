@@ -3,11 +3,11 @@
 [![Nix CI](https://github.com/T4D4-IU/Minecraft-server-flake/actions/workflows/nix.yml/badge.svg)](https://github.com/T4D4-IU/Minecraft-server-flake/actions/workflows/nix.yml)
 
 Nix Flakes を使用して宣言的に構築された、工業化 Mod 中心の中規模 Minecraft サーバーです。
-M4 Mac (Apple Silicon) および Linux で動作します。
+Nixが動くなら動作する筈。
 
 ---
 
-## 🎮 プレイヤー向けセットアップ (ご友人用)
+## 🎮 プレイヤー向けセットアップ 
 
 サーバーに参加するために、以下の手順で Mod を導入してください。
 
