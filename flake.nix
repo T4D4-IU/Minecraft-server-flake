@@ -7,13 +7,12 @@
   };
 
   outputs = {
-    self,
     nixpkgs,
     nix-minecraft,
     ...
   }: let
     supportedSystems = ["aarch64-darwin" "x86_64-linux" "aarch64-linux" "x86_64-darwin"];
-    forAllSystems = f: nixpkgs.lib.genAttrs supportedSystems (system: f system);
+    forAllSystems = nixpkgs.lib.genAttrs supportedSystems;
 
     nixpkgsFor = forAllSystems (system:
       import nixpkgs {
@@ -61,7 +60,7 @@
         # Combine mods
         modsDir = pkgs.linkFarm "minecraft-mods" (pkgs.lib.mapAttrsToList (name: path: {
             name = "${name}.jar";
-            path = path;
+            inherit path;
           })
           mods);
         # Memory settings
@@ -141,7 +140,7 @@
         };
         modsDir = pkgs.linkFarm "minecraft-mods" (pkgs.lib.mapAttrsToList (name: path: {
             name = "${name}.jar";
-            path = path;
+            inherit path;
           })
           mods);
       in {
