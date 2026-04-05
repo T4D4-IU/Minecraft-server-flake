@@ -52,7 +52,7 @@ PrismLauncher にて管理しているクライアントMODリストをもとに
 ## 2026-04-04
 
 ### 1. 何処を (Where)
-`/Users/t4d4/Develop/Minecraft-server-flake/flake.nix`
+`flake.nix`
 
 ### 2. 何故 (Why)
 M4 Mac (Darwin) 上で NeoForge 1.21.1 サーバーを動作させ、指定された工業系・便利系 Mod を自動的に導入するため。
