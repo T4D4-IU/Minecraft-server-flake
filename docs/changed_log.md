@@ -3,7 +3,7 @@
 ## 2026-04-05 (MOD追加)
 
 ### 1. 何処を (Where)
-`/Users/t4d4/Develop/Minecraft-server-flake/flake.nix`
+`./flake.nix`
 
 ### 2. 何故 (Why)
 PrismLauncher にて管理しているクライアントMODリストをもとに、サーバー側に必要なMODを追加するため。
