@@ -1,5 +1,17 @@
 # Changed Log
 
+## 2026-04-05
+
+### 1. 何処を (Where)
+`/Users/t4d4/Develop/Minecraft-server-flake/flake.nix`
+
+### 2. 何故 (Why)
+`flake.nix` 内にて、`apps` (実行用) と `packages` (配布用) に定義されていた MOD のリストが重複しており、追加時の記載漏れなどの原因となり得るため、保守性向上のために集約しました。
+
+### 3. どのように (How)
+- 共通の関数 `commonMods` と `commonModsDir` を `let` 句に定義しました。
+- `apps` および `packages` のブロック内で当該定義を参照するように再構築し、重複を排除しました。
+
 ## 2026-04-04
 
 ### 1. 何処を (Where)
@@ -33,6 +45,5 @@ M4 Mac (Darwin) 上で NeoForge 1.21.1 サーバーを動作させ、指定さ�
 - GitHub Actions のトリガーに `paths` フィルターを追加。`docs/` などのドキュメントのみの変更時は CI をスキップするように最適化。
 - `deadnix` および `statix` による指摘内容を修正し、全ての自動チェックをパスするように調整。
 - `README.md` を追加。ご友人や他のプレイヤーが GitHub Actions から最新の Mod パックを入手するためのガイドを整備。
-- `packages.mods-zip` を追加し、サーバーで使用している Mod を一括で ZIP 圧縮してクライアント向けに配布可能に。
 - `packages.mods-zip` を追加し、サーバーで使用している Mod を一括で ZIP 圧縮してクライアント向けに配布可能に。
 - GitHub Actions で `mods.zip` をビルドし、成果物（Artifact）としてアップロードするステップを追加。
