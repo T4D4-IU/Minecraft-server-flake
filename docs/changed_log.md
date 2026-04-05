@@ -40,7 +40,7 @@ PrismLauncher にて管理しているクライアントMODリストをもとに
 
 
 ### 1. 何処を (Where)
-`/Users/t4d4/Develop/Minecraft-server-flake/flake.nix`
+`./flake.nix`
 
 ### 2. 何故 (Why)
 `flake.nix` 内にて、`apps` (実行用) と `packages` (配布用) に定義されていた MOD のリストが重複しており、追加時の記載漏れなどの原因となり得るため、保守性向上のために集約しました。
