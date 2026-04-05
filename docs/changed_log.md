@@ -1,6 +1,43 @@
 # Changed Log
 
-## 2026-04-05
+## 2026-04-05 (MOD追加)
+
+### 1. 何処を (Where)
+`/Users/t4d4/Develop/Minecraft-server-flake/flake.nix`
+
+### 2. 何故 (Why)
+PrismLauncher にて管理しているクライアントMODリストをもとに、サーバー側に必要なMODを追加するため。
+
+### 3. どのように (How)
+- 以下のMODを `commonMods` に追加しました (Modrinth CDNから自動取得)：
+    - AppliedE (1.0.8-beta)
+    - Architectury (13.0.8)
+    - Bagus Lib (1.21.1-13.25.1)
+    - Bookshelf (21.1.81)
+    - Cloth Config v15 API (15.0.140)
+    - Clumps (19.0.0.1)
+    - EMC Schematic Cannon (1.1.0)
+    - Gravestone Mod (1.0.35)
+    - Jade (15.10.5)
+    - MCPitanLib (3.6.3)
+    - Mekanism: Additions (10.7.18.84)
+    - Mekanism: Generators (10.7.18.84)
+    - Mekanism: Tools (10.7.18.84)
+    - ModernFix (5.26.1)
+    - PrickleMC (21.1.11)
+    - TofuCraftReload (1.21.1-12.20.2.0)
+    - Uncrafting Table (1.5.4)
+    - Sinytra Connector (2.0.0-beta.14)
+    - Forgified Fabric API (0.116.7+2.2.4)
+- 以下のMODはCurseForge専用だが、`mediafilez.forgecdn.net` CDNの直接URLを利用して `pkgs.fetchurl` で追加：
+    - ProjectE (1.1.0)
+    - FTB Library (2101.1.31)
+    - FTB Ultimine (2101.1.13)
+- 以下のMODは対応リリースが見つからず導入を断念：
+    - Buildcraft-Legacy
+    - Porting Dead Libs
+- クライアント専用MOD（Iris, Sodium, AppleSkin等）はサーバー不要のため追加していません。
+
 
 ### 1. 何処を (Where)
 `/Users/t4d4/Develop/Minecraft-server-flake/flake.nix`
