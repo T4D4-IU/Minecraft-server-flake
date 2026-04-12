@@ -14,7 +14,7 @@
 
 ### Minecraft Server Flake
 
-#### [MODIFY] [flake.nix](file:///Users/t4d4/Develop/Minecraft-server-flake/flake.nix)
+#### [MODIFY] [flake.nix](../flake.nix)
 
 - `outputs` の `let ... in` ブロックの中に、各システムごとの MOD 定義を生成する共通ロジックを配置します。
 - 具体的には、`apps` と `packages` の両方で `nixpkgsFor.${system}` を取得した直後に、共通の定義を読み込むようにします。
