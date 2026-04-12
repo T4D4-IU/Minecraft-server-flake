@@ -121,7 +121,7 @@
         sha512 = "9f90b3c84533e01c6834053e92b02680f5a4d5a5d337e424e72bfa234310bca4278a2b02ad71f85668b128494e200153e72afa74de320659c7baac3b25218d15";
       };
       # Sinytra Connector + Forgified Fabric API (Fabric MODをNeoForgeで動かす互換レイヤー)
-      # サーバー不要であれば以下2ブロックを削除してください
+      # サーバー不要であれば以下２ブロックを削除してください
       sinytra-connector = pkgs.fetchurl {
         url = "https://cdn.modrinth.com/data/u58R1TMW/versions/1i8teo7m/connector-2.0.0-beta.14%2B1.21.1-full.jar";
         sha512 = "6ed3168c2c7dad2606ada1fdf63ee412bb8bb5620718a702f6ac51310e671f2f93ab46fc96400e258f4433e51b96f9dd21441e1a8963d8b356c75b578e156dcc";
