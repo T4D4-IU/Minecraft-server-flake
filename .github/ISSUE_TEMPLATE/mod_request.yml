@@ -1,0 +1,61 @@
+name: "Mod リクエスト"
+description: "サーバーへの Mod 追加をリクエストする"
+title: "[Mod Request] <Mod名>"
+labels: ["mod-request"]
+body:
+  - type: input
+    id: mod-name
+    attributes:
+      label: "Mod 名"
+      description: "追加してほしい Mod の正式名称を記入してください。"
+      placeholder: "例: Botania"
+    validations:
+      required: true
+
+  - type: input
+    id: mod-url
+    attributes:
+      label: "Mod のリンク"
+      description: "Modrinth または CurseForge のページ URL を貼ってください。"
+      placeholder: "https://modrinth.com/mod/..."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: mod-side
+    attributes:
+      label: "動作サイド"
+      description: "この Mod はどちらで動作しますか？"
+      options:
+        - "サーバー & クライアント（両方必要）"
+        - "クライアント専用"
+        - "サーバー専用"
+        - "不明"
+    validations:
+      required: true
+
+  - type: textarea
+    id: reason
+    attributes:
+      label: "追加の理由・用途"
+      description: "この Mod でどんなことがしたいか、追加するとどんなメリットがあるかを教えてください。"
+      placeholder: "例: 農業・生産を豊かにしたい。既存の工業 Mod と相性が良くサーバーの目的に合っていると思います。"
+    validations:
+      required: true
+
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: "依存 Mod（わかる場合）"
+      description: "この Mod の動作に必要な依存 Mod があれば記載してください。"
+      placeholder: "例: Architectury API が必要"
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: "確認事項"
+      options:
+        - label: "Minecraft 1.21.1 の NeoForge に対応していることを確認した"
+          required: true
+        - label: "既存の Issue に同じリクエストがないことを確認した"
+          required: true
