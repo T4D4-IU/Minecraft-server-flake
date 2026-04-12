@@ -1,28 +1,19 @@
 # Error Report 1
 
 ## エラー内容
-`error: Refusing to evaluate package 'neoforge-1.21.1-21.1.222' because it has an unfree license ('unfreeRedistributable')`
+`Unable to resolve action DeterminateSystems/determinate-nix-action@v4, repository or version not found`
 
 ## エラーの意味
-NeoForge は「unfreeRedistributable（再配布可能な非自由ライセンス）」として定義されています。Nix のデフォルト設定では、オープンソースではない、あるいは自由なライセンスではないソフトウェアのインストールや評価を制限しており、今回の NeoForge サーバーパッケージがこれに該当したためエラーとなりました。
+指定された GitHub Action `DeterminateSystems/determinate-nix-action` のバージョン `@v4` がリポジトリに見つかりませんでした。
+
+## 原因
+前回の修正時に、存在しないメジャーバージョン `v4` を指定してしまいました。調査の結果、現時点での最新メジャーバージョンは `v3`（最新リリース: `v3.17.3`）であることが判明しました。
 
 ## 修正計画
-### 何を
-`flake.nix` 内の `nixpkgs` のインポート設定を修正します。
+1.  `.github/workflows/nix.yml` 内の `DeterminateSystems/determinate-nix-action@v4` を `@v3` に修正します。
+2.  その他のアクション（`flake-checker-action@v12` など）は存在を確認済みのため、そのまま維持します。
 
-### 何故
-Nixpkgs の設定で `allowUnfree = true` を明示的に設定することで、NeoForge のようなライセンスを持つパッケージの評価を許可するためです。
-
-### どのように
-`flake.nix` の `pkgs` を定義している箇所を以下のように変更します：
-
-```nix
-      pkgs = import nixpkgs {
-        inherit system;
-        overlays = [ nix-minecraft.overlay ];
-        config.allowUnfree = true; # この行を追加
-      };
-```
-
-## 承認のお願い
-この修正を行ってよろしいでしょうか？承認をいただければ、ファイルを更新いたします。
+## DoD (Definition of Done)
+- [ ] `.github/workflows/nix.yml` のバージョンミスが修正される。
+- [ ] GitHub Actions がアクションを正常にロードし、実行が開始される。
+- [ ] `docs/changed_log.md` に修正内容が記載される。

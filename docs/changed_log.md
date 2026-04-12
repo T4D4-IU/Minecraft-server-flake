@@ -10,6 +10,6 @@
     *   FlakeHub 認証エラー（統計情報送信失敗）を解消するため。
     *   キャッシュサービスのエラー対策と、設定の簡素化のため。
 3.  **どのように**:
-    *   `DeterminateSystems/nix-installer-action` と `DeterminateSystems/magic-nix-cache-action` を廃止し、後継の統合アクション `DeterminateSystems/determinate-nix-action@v4` に置き換え。
+    *   `DeterminateSystems/nix-installer-action` と `DeterminateSystems/magic-nix-cache-action` を廃止し、後継の統合アクション `DeterminateSystems/determinate-nix-action@v3` に置き換え。
     *   `DeterminateSystems/flake-checker-action` を `v12` に更新し、`send-statistics: false` を設定して FlakeHub への報告を無効化。
     *   全体的なアクションのバージョンを見直し。
